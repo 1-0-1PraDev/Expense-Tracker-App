@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reseting the default styles */
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--body-bg-clr);
+  color: var(--body-text-clr);
+  --common-padding: 1.2rem 1.4rem;
+  --danger-red-clr: #FF7E6E;
+}
+
+html{
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+.dark-theme{
+  --body-bg-clr: #000000;
+  --body-text-clr: #ffffff;
+  --button-trans-bg-clr: #BCFF05;
+  --button-trans-text-clr: #000000;
+  --button-bg-clr: #191C21;
+  --faint-clr: rgba(255, 255, 255, 0.49);
+  --modal-bg-clr: #111418;
+  --modal-border-clr: rgba(212, 219, 226, 0.12);
+  --modal-input-text-clr: rgba(61, 68, 76, 0.9);
+  --border-bg-clr: rgba(255,255,255,0.15);
+}
+
+.light-theme{
+  --body-bg-clr: #ffffff;
+  --body-text-clr: #000000;
+  --button-trans-bg-clr: #118C01;
+  --button-trans-text-clr: #ffffff;
+  --button-bg-clr: #F3F5F7;
+  --faint-clr: rgba(0, 0, 0, 0.49);
+  --modal-bg-clr: #F3F5F7;
+  --modal-input-text-clr: rgba(61, 68, 76, 0.3);
+  --border-bg-clr: rgba(0,0,0,0.15);
+}
+
+.add-transaction-btn{
+  background-color: var(--button-trans-bg-clr);
+  color: var(--button-trans-text-clr);
+}
+
+button{
+  width: max-content;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: var(--button-bg-clr);
+  color: var(--faint-clr);
+  border: 3px solid transparent;
+}
+
+button:focus{
+  border: 3px solid var(--button-trans-bg-clr);
+}
+
+button:disabled{
+  background-color: var(--button-bg-clr);
+  color: var(--faint-clr);
+  cursor: no-drop;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Shimmer effect CSS */
+.shimmer-wrapper {
+  width: 100%;
+  display: flex;
+  background: var(--body-bg-clr);
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.shimmer {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to right, #eff1f37a 4%, #e2e2e2cf 25%, #eff1f3 36%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+  margin-bottom: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+      background-position: -800px 0;
+  }
+  100% {
+      background-position: 800px 0;
+  }
+}
+
+
+@media(max-width: 991px){
+  html{
+    font-size: 87%;
+  }
+}
+
+@media(max-width: 440px){
+  html{
+    font-size: 80%;
+  }
+}
